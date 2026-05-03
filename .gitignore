@@ -1,0 +1,28 @@
+# Data — too large for GitHub, users download from Harvard Dataverse
+data/raw/*.RData
+data/raw/*.RData.part
+data/processed/*.parquet
+data/processed/*.npy
+data/processed/anomaly_windows.npz
+
+# Cached PCMCI matrices — large (~110 MB), regenerable
+models/causal_results_v2.npz
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Cover letters / personal docs — keep these local only
+Cover_Letter_*.docx
