@@ -1,4 +1,11 @@
-# ProcessRCA
+"""
+One-shot script to write a clean README.md to the project root.
+Bypasses notepad's encoding issues with multi-line markdown.
+"""
+
+from pathlib import Path
+
+README = r"""# ProcessRCA
 
 **Causal Root Cause Analysis for Multivariate Industrial Time-Series**
 
@@ -208,3 +215,9 @@ The hub-aware v3 ranker also mildly regressed on Fault 12 (1.00 → 0.40 top-3) 
 - Rieth, C. A., Amsel, B. D., Tran, R., & Cook, M. B. (2017). *Additional Tennessee Eastman Process Simulation Data for Anomaly Detection Evaluation.* Harvard Dataverse, V1. https://doi.org/10.7910/DVN/6C3JR1
 - Runge, J., Nowack, P., Kretschmer, M., Flaxman, S., & Sejdinovic, D. (2019). *Detecting and quantifying causal associations in large nonlinear time series datasets.* Science Advances, 5(11).
 - Russell, E. L., Chiang, L. H., & Braatz, R. D. (2000). *Fault detection in industrial processes using canonical variate analysis and dynamic principal component analysis.* Chemometrics and Intelligent Laboratory Systems, 51(1), 81–93.
+"""
+
+out = Path(__file__).resolve().parent.parent / "README.md"
+out.write_text(README, encoding="utf-8")
+print(f"Wrote: {out}")
+print(f"  size: {out.stat().st_size / 1024:.1f} KB")
