@@ -141,6 +141,8 @@ Total compute time end-to-end on an RTX 2060: ~2.5 hours, almost all in the PCMC
 ---
 
 ## Project structure
+
+```
 bioprocess-causal-rca/
 ├── README.md
 ├── data/
